@@ -3,7 +3,7 @@
 import { measureSpanWidth } from './utilities.js';
 
 const ColumnWidthManager = ( () => {
-	const map = new WeakMap(); // table → columnWidths[]
+	const map = new WeakMap();
 
 	function get( table, i ) {
 		if( !map.has( table ) ) compute( table );

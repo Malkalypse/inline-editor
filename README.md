@@ -69,5 +69,5 @@ This project reflects a modular mindset applied to minimal UI:
 To adapt this for your own data:
 
 - Modify the `<table>` rows and headers.
-- Extend the `enterEditMode` and `exitEditMode` functions to handle more columns or validation.
+- Extend the `enterEdit` and `saveEdit` functions to handle more columns or validation.
 - Style inputs further for accessibility or theming.
