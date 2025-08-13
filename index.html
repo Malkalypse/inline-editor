@@ -93,7 +93,7 @@
     for( let i = 0; i < 3; i++ ) {
       const cell = cells[i];
       const value = cell.textContent;
-      const width = measureTextWidth( value, cell );
+      const width = measureSpanWidth( value, cell );
       const style = getComputedStyle( cell );
 
       // Inline input with matched font and measured width
@@ -105,6 +105,9 @@
         font: ${style.font};
         letter-spacing: ${style.letterSpacing};
       " />`;
+
+      const input = cell.querySelector( 'input' );
+      autoSizeInput( input );      
     }
   }
 
@@ -129,8 +132,22 @@
     button.classList.add( addClass );
   }
 
+  // Attach live width sync to input based on its text content
+  function autoSizeInput( input ) {
+
+    // Measure width using hidden span with matched font
+    function updateWidth() {
+      const width = measureSpanWidth( input.value, input );
+      input.style.width = width + 'px';
+    }
+
+    
+    input.addEventListener( 'input', updateWidth );
+    updateWidth();
+  }
+
   // Measure pixel width of text using hidden span
-  function measureTextWidth( text, referenceCell ) {
+  function measureSpanWidth( text, referenceCell ) {
     const span = document.createElement( 'span' );
     span.textContent = text;
     span.style.visibility = 'hidden';
