@@ -4,7 +4,7 @@ A minimal, rollback-safe inline editing interface for HTML tables—now modulari
 
 ## 🔗 Live Demo
 
-Try it out instantly: [Inline Table Editor Demo](https://malkalypse.github.io/inline-editor/)
+Try it out instantly: [Inline Table Editor Demo](https://malkalypse.github.io/table-editor/)
 
 ## ✨ Features
 
